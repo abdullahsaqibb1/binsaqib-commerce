@@ -1,6 +1,7 @@
 import cors from "cors";
 import express, { type ErrorRequestHandler } from "express";
 import helmet from "helmet";
+import { getPrisma } from "./database/client.js";
 
 const configuredOrigins = [process.env.STOREFRONT_URL, process.env.ADMIN_URL].filter(
   (origin): origin is string => Boolean(origin)
@@ -31,6 +32,15 @@ app.get("/health", (_request, response) => {
     status: "ok",
     timestamp: new Date().toISOString()
   });
+});
+
+app.get("/health/database", async (_request, response, next) => {
+  try {
+    await getPrisma().$queryRaw`SELECT 1`;
+    response.status(200).json({ service: "binsaqib-database", status: "ok" });
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.use((_request, response) => {

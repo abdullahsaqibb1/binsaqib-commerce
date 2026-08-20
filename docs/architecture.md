@@ -46,3 +46,10 @@ The API will be separated into modules instead of a single application file:
 ## Environment policy
 
 Secrets belong in Vercel environment variables and local ignored files. The repository only contains placeholders in `.env.example`. Database migrations will run only after the Vercel projects and Neon integration are linked and verified.
+
+## Database connection policy
+
+- Runtime API traffic uses `DATABASE_POSTGRES_PRISMA_URL`, the pooled Neon connection optimized for Prisma.
+- Prisma migrations prefer `DATABASE_POSTGRES_URL_NON_POOLING` and fall back to `DATABASE_URL` when necessary.
+- The Prisma client is initialized lazily inside the API runtime so builds do not open database connections.
+- Migrations are reviewed and committed before `prisma migrate deploy` is run against production.
