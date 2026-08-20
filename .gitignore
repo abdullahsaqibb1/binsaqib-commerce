@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# builds
+.next/
+dist/
+coverage/
+.turbo/
+
+# local configuration
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel/
+
+# editor and operating system files
+.DS_Store
+*.swp
+*.log
+
+# Prisma local databases
+*.db
+*.db-journal
