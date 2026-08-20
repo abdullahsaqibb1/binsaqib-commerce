@@ -1,0 +1,19 @@
+{
+  "name": "binsaqib-commerce",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev:storefront": "npm run dev --workspace=@binsaqib/storefront",
+    "dev:admin": "npm run dev --workspace=@binsaqib/admin",
+    "dev:api": "npm run dev --workspace=@binsaqib/api",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}

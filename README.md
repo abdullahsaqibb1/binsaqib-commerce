@@ -20,6 +20,15 @@ A premium, luxury-focused commerce operating system for BinSaqib.
 - Modular domains instead of a monolithic backend
 - No secrets committed to source control
 
+## Local setup
+
+1. Install Node.js 22 or later.
+2. Run `npm install` from the repository root.
+3. Copy `.env.example` to `.env` and replace placeholders locally.
+4. Run one surface at a time with `npm run dev:storefront`, `npm run dev:admin`, or `npm run dev:api`.
+
+Database commands are intentionally deferred until the Vercel projects and Neon integration are linked. See [the architecture notes](docs/architecture.md) for the deployment topology and security baseline.
+
 ## Status
 
-Repository bootstrap in progress.
+Foundation and brand-direction bootstrap in progress on `codex/bootstrap-binsaqib`.
