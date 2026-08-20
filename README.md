@@ -34,6 +34,7 @@ Database commands are intentionally deferred until the Vercel projects and Neon 
 - Responsive luxury storefront shell
 - Separate operations dashboard shell
 - Express API health and security baseline
+- Prisma 7 and Neon commerce database foundation
 - Shared BinSaqib design tokens
 - Vercel monorepo configuration
 - Product requirements and architecture documentation
@@ -41,3 +42,5 @@ Database commands are intentionally deferred until the Vercel projects and Neon 
 The attached logo is preserved at `apps/storefront/public/brand/logo-original.webp`. It should be professionally vectorized before final production use.
 
 This package is the application foundation. Commerce modules such as authentication, catalogue management, inventory, checkout, orders, reviews, finance, and CMS will be implemented incrementally against the included product requirements.
+
+Database architecture and migration policy are documented in [docs/database.md](docs/database.md).
